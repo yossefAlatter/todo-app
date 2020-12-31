@@ -517,6 +517,7 @@ export default {
   background-color: var(--color8);
   box-shadow: 0px 20px 19px 11px #00000030;
   border-radius: 5px;
+  overflow: hidden;
   cursor: default;
   .create-area {
     width: 100%;
