@@ -633,6 +633,8 @@ export default {
     .footer-notice{
         display: block;
     }
+}
+@media screen and (max-width: 400px){
     .footer-notice{
         display: none;
     }
