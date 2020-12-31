@@ -9,6 +9,7 @@
     <!-- start -->
     <main-body />
     <!-- end -->
+    <error-msg id="myerror" />
   </div>
 </template>
 
@@ -21,9 +22,10 @@ import MainBody from './components/MainBody.vue'
 
 //== import jquery ==//
 import $ from 'jquery';
+import ErrorMsg from './components/ErrorMsg.vue';
 
 export default {
-  components: { AppBg, MainBody },
+  components: { AppBg, MainBody, ErrorMsg },
 
   name: 'App',
 
@@ -48,6 +50,9 @@ export default {
 #app{
   height: 100vh;
   overflow-y: auto;
+}
+#myerror{
+display: none;
 }
 //== media of app ==//
 //== start ==//

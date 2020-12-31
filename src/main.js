@@ -17,6 +17,11 @@ import 'jquery-ui';
 import 'jquery-ui/ui/jquery-1-7';
 //== end ==//
 
+//== import bootstrap ==//
+//== start ==//
+import 'bootstrap'
+import 'bootstrap/dist/css/bootstrap.min.css'
+
 //== import general style ==//
 //== start ==//
 import './general_style/main.scss'

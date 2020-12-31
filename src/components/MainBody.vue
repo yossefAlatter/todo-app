@@ -179,19 +179,23 @@ export default {
     //== start ==//
     createTask(e) {
       if (e.key == "Enter") {
-        $(".create-area").hide().show();
-        this.allTasks.push(this.taskValue);
-        var index = this.allTasks.indexOf(this.taskValue);
-        var newTask = {
-          id: index,
-          info: this.taskValue,
-          done: false,
-        };
-        this.currentTasks.push(newTask);
-        this.activeTasks.push(newTask);
-        $(".create-todo-box input").val("");
-        this.taskValue = "";
-        localStorage.setItem("allTasks", JSON.stringify(this.allTasks));
+        if(this.taskValue == ''){
+            this.controlMessage("empty");
+        }else{
+            $(".create-area").hide().show();
+            this.allTasks.push(this.taskValue);
+            var index = this.allTasks.indexOf(this.taskValue);
+            var newTask = {
+            id: index,
+            info: this.taskValue,
+            done: false,
+            };
+            this.currentTasks.push(newTask);
+            this.activeTasks.push(newTask);
+            $(".create-todo-box input").val("");
+            this.taskValue = "";
+            localStorage.setItem("allTasks", JSON.stringify(this.allTasks));
+        }
       }
     },
     //== end ==//
@@ -340,6 +344,22 @@ export default {
       this.currentTasks = this.currentTasks.filter((el) => {
         return el != deletedTask;
       });
+    },
+    //== end ==//
+
+    //== method to control message error ==//
+    //== start ==//
+    controlMessage(er){
+        var myerror = document.getElementById("myerror");
+        myerror.style.display="flex";
+        var myerrorbox = document.getElementById("msg_con");
+        if(er == "empty"){
+          myerrorbox.innerHTML = `
+          <p class="text-center">Task can't be empty
+            </p>
+            <p class="text-center mb-2"></p>
+        `
+        }
     },
     //== end ==//
   },
