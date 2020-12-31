@@ -20,7 +20,7 @@ export default {
 </script>
 <style scoped>
     .error-page{
-        background-color: rgba(0, 0, 0, 0.596);
+        background-color: rgba(0, 0, 0, 0);
         height: 100vh;
         width: 100%;
         position: absolute;
