@@ -626,4 +626,16 @@ export default {
   }
 }
 //== end ==//
+
+//== media of footer ==//
+//== start ==//
+@media screen and (max-width: 400px){
+    .footer-notice{
+        display: block;
+    }
+    .footer-notice{
+        display: none;
+    }
+}
+//== end ==//
 </style>
