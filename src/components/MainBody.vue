@@ -420,6 +420,7 @@ export default {
       cursorborder: "none",
       cursorwidth: "5px",
     });
+    $(".create-area").getNiceScroll().resize();
     //== end ==//
 
     //== always at start run all ==//

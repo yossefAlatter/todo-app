@@ -39,6 +39,7 @@ export default {
       cursorborder: 'none',
       cursorfixedheight: 400 ,
     })
+    $("#app").getNiceScroll().resize();
     //== end ==//
 
   }
