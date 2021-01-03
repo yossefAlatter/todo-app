@@ -27,9 +27,11 @@
     <!-- start -->
     <div class="todo-list">
       <div class="create-area">
-        <ul class="all-tasks" id="sortable"></ul>
-        <ul class="active-tasks"></ul>
-        <ul class="completed-tasks"></ul>
+        <div class="wrapper">
+          <ul class="all-tasks" id="sortable"></ul>
+          <ul class="active-tasks"></ul>
+          <ul class="completed-tasks"></ul>
+        </div>
       </div>
       <div class="control-menu">
         <span class="todo-info">{{ activeTasks.length }} items left</span>
@@ -247,6 +249,7 @@ export default {
         default:
           break;
       }
+      $(".create-area").getNiceScroll().resize();
     },
     //== end ==//
 
@@ -402,6 +405,7 @@ export default {
     activeTasks() {
       this.createTasksDom(this.activeTasks, ".active-tasks");
       localStorage.setItem("activeTasks", JSON.stringify(this.activeTasks));
+      $(".create-area").getNiceScroll().resize();
     },
 
     completedTasks() {
@@ -410,13 +414,14 @@ export default {
         "completedTasks",
         JSON.stringify(this.completedTasks)
       );
+      $(".create-area").getNiceScroll().resize();
     },
   },
 
   mounted() {
     //== add niceScroll to create-area ==//
     //== start ==//
-    $(".create-area").niceScroll("ul",{
+    $(".create-area").niceScroll(".wrapper",{
       cursorcolor: "var(--color1)",
       cursorborder: "none",
       cursorwidth: "7px",
@@ -529,9 +534,6 @@ export default {
     width: 100%;
     height: 394px;
     overflow-y: auto;
-    div {
-      height: 100%;
-    }
   }
   .control-menu {
     display: flex;
