@@ -416,10 +416,14 @@ export default {
   mounted() {
     //== add niceScroll to create-area ==//
     //== start ==//
-    $(".create-area").niceScroll({
+    $(".create-area").niceScroll("ul",{
       cursorcolor: "var(--color1)",
       cursorborder: "none",
-      cursorwidth: "5px",
+      cursorwidth: "7px",
+      autohidemode: false,
+      background: "gray",
+      touchbehavior: false,
+
     });
     $(".create-area").getNiceScroll().resize();
     //== end ==//
