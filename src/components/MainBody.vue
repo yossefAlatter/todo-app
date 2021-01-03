@@ -396,6 +396,7 @@ export default {
         }
       }
       localStorage.setItem("currentTasks", JSON.stringify(this.currentTasks));
+      $(".create-area").getNiceScroll().resize();
     },
 
     activeTasks() {
