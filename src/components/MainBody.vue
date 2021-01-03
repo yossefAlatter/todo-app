@@ -427,7 +427,7 @@ export default {
       cursorwidth: "7px",
       autohidemode: false,
       background: "gray",
-      touchbehavior: false,
+      touchbehavior: true,
 
     });
     $(".create-area").getNiceScroll().resize();
